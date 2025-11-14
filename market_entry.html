@@ -89,13 +89,15 @@ loadMatrices();
 </SCRIPT>
 <!--END TABLE STRUCTURE-->
 
-<FORM name="mlwebform" onSubmit="return checkForm(this)" method="POST" action="https://www.mouselabweb.org/mlwebmailer.php"><INPUT type=hidden name="procdata" value="">
-<input type=hidden name="subject" value="">
-<input type=hidden name="expname" value="">
-<input type=hidden name="nextURL" value="">
-<input type=hidden name="choice" value="">
-<input type=hidden name="condnum" value="">
-<input type=hidden name="to_email" value="">
+<FORM name="mlwebform" onSubmit="return checkForm(this)" method="POST"
+      action="https://www.mouselabweb.org/mlwebmailer.php">
+  <input type="hidden" name="procdata" value="">
+  <input type="hidden" name="subject" value="Mouselab data - market_entry">
+  <input type="hidden" name="expname" value="market_entry">
+  <input type="hidden" name="nextURL" value="thanks.html">
+  <input type="hidden" name="choice" value="">
+  <input type="hidden" name="condnum" value="">
+  <input type="hidden" name="to_email" value="vmcieslak@me.com">
 <!--BEGIN preHTML-->
 <h2>Market Entry Evaluation</h2>
 
@@ -174,3 +176,4 @@ Review the information for both markets on all four attributes, then choose one 
 <textarea name="reason" rows="5" cols="50"></textarea>
 
 <!--END postHTML--><INPUT type="submit" value="Next Page" onClick=timefunction('submit','submit','submit')></FORM></body></html>
+
