@@ -1,0 +1,176 @@
+<HTML>
+<HEAD>
+<TITLE>MouselabWEB Survey</TITLE>
+<script language=javascript src="mlweb.js"></SCRIPT>
+<link rel="stylesheet" href="mlweb.css" type="text/css">
+</head>
+
+<body onLoad="timefunction('onload','body','body')">
+
+<!--BEGIN TABLE STRUCTURE-->
+<SCRIPT language="javascript">
+//override defaults
+mlweb_outtype="CSV";
+mlweb_fname="mlwebform";
+tag = "a0^a1^a2`"
+ + "b0^b1^b2`"
+ + "c0^c1^c2`"
+ + "d0^d1^d2`"
+ + "e0^e1^e2";
+
+txt = "Attribute^Mexico^Indonesia`"
+ + "Market Opportunity^<b>Market Opportunity</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Based on analysis of current market data, Mexico shows solid growth potential. The country has 130 million people with an expanding middle class. Smartphone penetration is at 45% and growing. AI pattern detection indicates 18% annual growth in the smart home market through 2028. Consumer readiness metrics suggest moderate adoption rates, with stronger interest in urban areas.^<b>Market Opportunity</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Based on analysis of current market data, Indonesia shows strong growth potential. The country has 275 million people with high smartphone penetration at 68%. AI pattern detection indicates 25% annual growth in the smart home market through 2028. Consumer readiness metrics suggest developing adoption rates, with significant opportunity in urban markets.`"
+ + "Competitive & Regulatory Environment^<b>Competitive & Regulatory Environment</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Analysis has identified three main competitors controlling about 55% of the market, leaving room for new entrants. The regulatory pathway appears straightforward - certification typically takes 4-6 months. The USMCA trade agreement provides tariff advantages. IP protection frameworks are in place and functioning adequately.^<b>Competitive & Regulatory Environment</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Analysis has identified 5+ competitors in a fragmented market where no single player dominates above 30% share. The regulatory pathway is more complex - certification typically takes 8-12 months. Local content requirements mandate 30% domestic manufacturing. IP protection enforcement varies and requires careful monitoring.`"
+ + "Operational Feasibility (infrastructure, logistics)^<b>Operational Feasibility</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Infrastructure analysis shows strong capabilities in major cities with 98% electricity reliability. Spanish language support will be required. Analysis has identified existing retail partnerships that could facilitate distribution. Logistics networks in urban centers are well-developed and accessible.^<b>Operational Feasibility</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Infrastructure analysis shows strong capabilities in Jakarta and major cities, with 85% electricity reliability nationally. Bahasa Indonesia plus regional language support will be required. Analysis has identified that multi-island distribution adds logistical complexity. Supply chains require more coordination than single-geography markets.`"
+ + "Investment & Returns (costs, profitability timeline)^<b>Investment & Returns</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Financial modeling indicates entry costs of $8-12 million with a breakeven timeline of 3-4 years. Projected returns are 15-18% by year 5. Currency risk from peso fluctuations is present but manageable. Overall, this represents a moderate-risk, moderate-return opportunity.^<b>Investment & Returns</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Financial modeling indicates entry costs of $15-20 million with a breakeven timeline of 5-6 years. Projected returns are 20-25% by year 5. Currency risk from rupiah fluctuations is notable and requires hedging. Overall, this represents a higher-risk, higher-return opportunity.";
+
+state = "0^0^0`"
+ + "0^1^1`"
+ + "0^1^1`"
+ + "0^1^1`"
+ + "0^1^1";
+
+box = "Attribute^Mexico^Indonesia`"
+ + "Market Opportunity^View info^View Info`"
+ + "Competitive & Regulatory Environment^View info^View Info`"
+ + "Operational Feasibility (infrastructure, logistics)^View info^View Info`"
+ + "Investment & Returns (costs, profitability timeline)^View info^View Info";
+
+CBCol = "0^0^0";
+CBRow = "0^0^0^0^0";
+W_Col = "250^250^250";
+H_Row = "100^250^250^250^250";
+
+chkchoice = "nobuttons";
+btnFlg = 0;
+btnType = "radio";
+btntxt = "";
+btnstate = "";
+btntag = "";
+to_email = "vmcieslak@me.com";
+colFix = false;
+rowFix = false;
+CBpreset = false;
+evtOpen = 0;
+evtClose = 0;
+chkFrm=false;
+warningTxt = "Some questions have not been answered. Please answer all questions before continuing!";
+tmTotalSec = 60;
+tmStepSec = 1;
+tmWidthPx = 200;
+tmFill = true;
+tmShowTime = true;
+tmCurTime = 0;
+tmActive = false;
+tmDirectStart = true;
+tmMinLabel = "min";
+tmSecLabel = "sec";
+tmLabel = "Timer: ";
+
+//Delay: b1 b2 c1 c2 d1 d2 e1 e2
+delay = "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0`"
+ + "0^0^0^0^0^0^0^0";
+activeClass = "actTD";
+inactiveClass = "inactTD";
+boxClass = "boxTD";
+cssname = "mlweb.css";
+nextURL = "thanks.html";
+expname = "market_entry";
+randomOrder = false;
+recOpenCells = false;
+masterCond = 1;
+loadMatrices();
+</SCRIPT>
+<!--END TABLE STRUCTURE-->
+
+<FORM name="mlwebform" onSubmit="return checkForm(this)" method="POST" action="https://www.mouselabweb.org/mlwebmailer.php"><INPUT type=hidden name="procdata" value="">
+<input type=hidden name="subject" value="">
+<input type=hidden name="expname" value="">
+<input type=hidden name="nextURL" value="">
+<input type=hidden name="choice" value="">
+<input type=hidden name="condnum" value="">
+<input type=hidden name="to_email" value="">
+<!--BEGIN preHTML-->
+<h2>Market Entry Evaluation</h2>
+
+<p>
+You are evaluating two possible market entry options: <strong>Mexico</strong> and <strong>Indonesia</strong>.
+Information about each market is hidden in boxes.
+</p>
+
+<p>
+Move your mouse over a box to reveal the information inside. When you move your mouse away,
+the box will close again.
+</p>
+
+<p>
+Review the information for both markets on all four attributes, then choose one country at the bottom of the page.
+</p>
+
+<!--END preHTML-->
+<!-- MOUSELAB TABLE -->
+<TABLE border=1>
+<TR>
+<!--cell a0(tag:a0)-->
+<TD align=center valign=middle><DIV ID="a0_cont" style="position: relative; height: 100px; width: 250px;"><DIV ID="a0_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; clip: rect(0px 250px 100px 0px); z-index: 1;"><TABLE><TD ID="a0_td" align=center valign=center width=245 height=95 class="inactTD">Attribute</TD></TABLE></DIV><DIV ID="a0_box" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; clip: rect(0px 250px 100px 0px); z-index: 2;"><TABLE><TD ID="a0_tdbox" align=center valign=center width=245 height=95 class="boxTD">Attribute</TD></TABLE></DIV><DIV ID="a0_img" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="a0" onMouseOver="ShowCont('a0',event)" onMouseOut="HideCont('a0',event)"><IMG NAME="a0" SRC="transp.gif" border=0 width=250 height=100></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell a1(tag:a1)-->
+<TD align=center valign=middle><DIV ID="a1_cont" style="position: relative; height: 100px; width: 250px;"><DIV ID="a1_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; clip: rect(0px 250px 100px 0px); z-index: 1;"><TABLE><TD ID="a1_td" align=center valign=center width=245 height=95 class="inactTD">Mexico</TD></TABLE></DIV><DIV ID="a1_box" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; clip: rect(0px 250px 100px 0px); z-index: 2;"><TABLE><TD ID="a1_tdbox" align=center valign=center width=245 height=95 class="boxTD">Mexico</TD></TABLE></DIV><DIV ID="a1_img" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="a1" onMouseOver="ShowCont('a1',event)" onMouseOut="HideCont('a1',event)"><IMG NAME="a1" SRC="transp.gif" border=0 width=250 height=100></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell a2(tag:a2)-->
+<TD align=center valign=middle><DIV ID="a2_cont" style="position: relative; height: 100px; width: 250px;"><DIV ID="a2_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; clip: rect(0px 250px 100px 0px); z-index: 1;"><TABLE><TD ID="a2_td" align=center valign=center width=245 height=95 class="inactTD">Indonesia</TD></TABLE></DIV><DIV ID="a2_box" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; clip: rect(0px 250px 100px 0px); z-index: 2;"><TABLE><TD ID="a2_tdbox" align=center valign=center width=245 height=95 class="boxTD">Indonesia</TD></TABLE></DIV><DIV ID="a2_img" STYLE="position: absolute; left: 0px; top: 0px; height: 100px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="a2" onMouseOver="ShowCont('a2',event)" onMouseOut="HideCont('a2',event)"><IMG NAME="a2" SRC="transp.gif" border=0 width=250 height=100></A></DIV></DIV></TD>
+<!--end cell--></TR><TR>
+<!--cell b0(tag:b0)-->
+<TD align=center valign=middle><DIV ID="b0_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="b0_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="b0_td" align=center valign=center width=245 height=245 class="inactTD">Market Opportunity</TD></TABLE></DIV><DIV ID="b0_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="b0_tdbox" align=center valign=center width=245 height=245 class="boxTD">Market Opportunity</TD></TABLE></DIV><DIV ID="b0_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="b0" onMouseOver="ShowCont('b0',event)" onMouseOut="HideCont('b0',event)"><IMG NAME="b0" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell b1(tag:b1)-->
+<TD align=center valign=middle><DIV ID="b1_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="b1_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="b1_td" align=center valign=center width=245 height=245 class="actTD"><b>Market Opportunity</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Based on analysis of current market data, Mexico shows solid growth potential. The country has 130 million people with an expanding middle class. Smartphone penetration is at 45% and growing. AI pattern detection indicates 18% annual growth in the smart home market through 2028. Consumer readiness metrics suggest moderate adoption rates, with stronger interest in urban areas.</TD></TABLE></DIV><DIV ID="b1_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="b1_tdbox" align=center valign=center width=245 height=245 class="boxTD">View info</TD></TABLE></DIV><DIV ID="b1_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="b1" onMouseOver="ShowCont('b1',event)" onMouseOut="HideCont('b1',event)"><IMG NAME="b1" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell b2(tag:b2)-->
+<TD align=center valign=middle><DIV ID="b2_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="b2_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="b2_td" align=center valign=center width=245 height=245 class="actTD"><b>Market Opportunity</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Based on analysis of current market data, Indonesia shows strong growth potential. The country has 275 million people with high smartphone penetration at 68%. AI pattern detection indicates 25% annual growth in the smart home market through 2028. Consumer readiness metrics suggest developing adoption rates, with significant opportunity in urban markets.</TD></TABLE></DIV><DIV ID="b2_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="b2_tdbox" align=center valign=center width=245 height=245 class="boxTD">View Info</TD></TABLE></DIV><DIV ID="b2_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="b2" onMouseOver="ShowCont('b2',event)" onMouseOut="HideCont('b2',event)"><IMG NAME="b2" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell--></TR><TR>
+<!--cell c0(tag:c0)-->
+<TD align=center valign=middle><DIV ID="c0_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="c0_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="c0_td" align=center valign=center width=245 height=245 class="inactTD">Competitive & Regulatory Environment</TD></TABLE></DIV><DIV ID="c0_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="c0_tdbox" align=center valign=center width=245 height=245 class="boxTD">Competitive & Regulatory Environment</TD></TABLE></DIV><DIV ID="c0_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="c0" onMouseOver="ShowCont('c0',event)" onMouseOut="HideCont('c0',event)"><IMG NAME="c0" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell c1(tag:c1)-->
+<TD align=center valign=middle><DIV ID="c1_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="c1_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="c1_td" align=center valign=center width=245 height=245 class="actTD"><b>Competitive & Regulatory Environment</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Analysis has identified three main competitors controlling about 55% of the market, leaving room for new entrants. The regulatory pathway appears straightforward - certification typically takes 4-6 months. The USMCA trade agreement provides tariff advantages. IP protection frameworks are in place and functioning adequately.</TD></TABLE></DIV><DIV ID="c1_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="c1_tdbox" align=center valign=center width=245 height=245 class="boxTD">View info</TD></TABLE></DIV><DIV ID="c1_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="c1" onMouseOver="ShowCont('c1',event)" onMouseOut="HideCont('c1',event)"><IMG NAME="c1" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell c2(tag:c2)-->
+<TD align=center valign=middle><DIV ID="c2_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="c2_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="c2_td" align=center valign=center width=245 height=245 class="actTD"><b>Competitive & Regulatory Environment</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Analysis has identified 5+ competitors in a fragmented market where no single player dominates above 30% share. The regulatory pathway is more complex - certification typically takes 8-12 months. Local content requirements mandate 30% domestic manufacturing. IP protection enforcement varies and requires careful monitoring.</TD></TABLE></DIV><DIV ID="c2_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="c2_tdbox" align=center valign=center width=245 height=245 class="boxTD">View Info</TD></TABLE></DIV><DIV ID="c2_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="c2" onMouseOver="ShowCont('c2',event)" onMouseOut="HideCont('c2',event)"><IMG NAME="c2" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell--></TR><TR>
+<!--cell d0(tag:d0)-->
+<TD align=center valign=middle><DIV ID="d0_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="d0_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="d0_td" align=center valign=center width=245 height=245 class="inactTD">Operational Feasibility (infrastructure, logistics)</TD></TABLE></DIV><DIV ID="d0_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="d0_tdbox" align=center valign=center width=245 height=245 class="boxTD">Operational Feasibility (infrastructure, logistics)</TD></TABLE></DIV><DIV ID="d0_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="d0" onMouseOver="ShowCont('d0',event)" onMouseOut="HideCont('d0',event)"><IMG NAME="d0" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell d1(tag:d1)-->
+<TD align=center valign=middle><DIV ID="d1_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="d1_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="d1_td" align=center valign=center width=245 height=245 class="actTD"><b>Operational Feasibility</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Infrastructure analysis shows strong capabilities in major cities with 98% electricity reliability. Spanish language support will be required. Analysis has identified existing retail partnerships that could facilitate distribution. Logistics networks in urban centers are well-developed and accessible.</TD></TABLE></DIV><DIV ID="d1_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="d1_tdbox" align=center valign=center width=245 height=245 class="boxTD">View info</TD></TABLE></DIV><DIV ID="d1_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="d1" onMouseOver="ShowCont('d1',event)" onMouseOut="HideCont('d1',event)"><IMG NAME="d1" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell d2(tag:d2)-->
+<TD align=center valign=middle><DIV ID="d2_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="d2_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="d2_td" align=center valign=center width=245 height=245 class="actTD"><b>Operational Feasibility</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Infrastructure analysis shows strong capabilities in Jakarta and major cities, with 85% electricity reliability nationally. Bahasa Indonesia plus regional language support will be required. Analysis has identified that multi-island distribution adds logistical complexity. Supply chains require more coordination than single-geography markets.</TD></TABLE></DIV><DIV ID="d2_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="d2_tdbox" align=center valign=center width=245 height=245 class="boxTD">View Info</TD></TABLE></DIV><DIV ID="d2_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="d2" onMouseOver="ShowCont('d2',event)" onMouseOut="HideCont('d2',event)"><IMG NAME="d2" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell--></TR><TR>
+<!--cell e0(tag:e0)-->
+<TD align=center valign=middle><DIV ID="e0_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="e0_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="e0_td" align=center valign=center width=245 height=245 class="inactTD">Investment & Returns (costs, profitability timeline)</TD></TABLE></DIV><DIV ID="e0_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="e0_tdbox" align=center valign=center width=245 height=245 class="boxTD">Investment & Returns (costs, profitability timeline)</TD></TABLE></DIV><DIV ID="e0_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="e0" onMouseOver="ShowCont('e0',event)" onMouseOut="HideCont('e0',event)"><IMG NAME="e0" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell e1(tag:e1)-->
+<TD align=center valign=middle><DIV ID="e1_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="e1_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="e1_td" align=center valign=center width=245 height=245 class="actTD"><b>Investment & Returns</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Financial modeling indicates entry costs of $8-12 million with a breakeven timeline of 3-4 years. Projected returns are 15-18% by year 5. Currency risk from peso fluctuations is present but manageable. Overall, this represents a moderate-risk, moderate-return opportunity.</TD></TABLE></DIV><DIV ID="e1_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="e1_tdbox" align=center valign=center width=245 height=245 class="boxTD">View info</TD></TABLE></DIV><DIV ID="e1_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="e1" onMouseOver="ShowCont('e1',event)" onMouseOut="HideCont('e1',event)"><IMG NAME="e1" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell-->
+<!--cell e2(tag:e2)-->
+<TD align=center valign=middle><DIV ID="e2_cont" style="position: relative; height: 250px; width: 250px;"><DIV ID="e2_txt" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 1;"><TABLE><TD ID="e2_td" align=center valign=center width=245 height=245 class="actTD"><b>Investment & Returns</b> <i>[AI-Generated Analysis]</i><br><br> <b><i>AI Assessment:</i></b> Financial modeling indicates entry costs of $15-20 million with a breakeven timeline of 5-6 years. Projected returns are 20-25% by year 5. Currency risk from rupiah fluctuations is notable and requires hedging. Overall, this represents a higher-risk, higher-return opportunity.</TD></TABLE></DIV><DIV ID="e2_box" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; clip: rect(0px 250px 250px 0px); z-index: 2;"><TABLE><TD ID="e2_tdbox" align=center valign=center width=245 height=245 class="boxTD">View Info</TD></TABLE></DIV><DIV ID="e2_img" STYLE="position: absolute; left: 0px; top: 0px; height: 250px; width: 250px; z-index: 5;"><A HREF="javascript:void(0);" NAME="e2" onMouseOver="ShowCont('e2',event)" onMouseOut="HideCont('e2',event)"><IMG NAME="e2" SRC="transp.gif" border=0 width=250 height=250></A></DIV></DIV></TD>
+<!--end cell--></TR></TABLE>
+<!-- END MOUSELAB TABLE -->
+<!--BEGIN postHTML-->
+<h3>Decision Question</h3>
+<p>Based on the information you reviewed, which market would you enter?</p>
+
+<label><input type="radio" name="market_choice" value="Mexico" required> Mexico</label><br>
+<label><input type="radio" name="market_choice" value="Indonesia" required> Indonesia</label><br><br>
+
+<p>Please briefly explain your decision:</p>
+<textarea name="reason" rows="5" cols="50"></textarea>
+
+<!--END postHTML--><INPUT type="submit" value="Next Page" onClick=timefunction('submit','submit','submit')></FORM></body></html>
